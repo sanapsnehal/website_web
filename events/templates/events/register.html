@@ -1,0 +1,25 @@
+
+{% include 'events/base.html' %}
+{% block content %}
+
+<center>
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+            <h1>REGISTER</h1>
+{{form.as_p}}
+<input type="submit" value="submit">
+<p class="text-center">If you already have an account, <a href="login">login</a> instead.</p>
+
+</form>
+
+</center>
+
+{% endblock %}

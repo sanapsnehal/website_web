@@ -1,0 +1,33 @@
+{% include 'events/base.html'%}
+{% block content %}
+<center>
+<h1>Client</h1> 
+<div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">client_id</th>
+                    <th scope="col">client_name</th>
+                    <th scope="col">created_at</th>
+                    <th scope="col">created_by</th>
+                </tr>
+            </thead>
+            <tbody>
+   
+{% for client in form %}
+<tr>
+<td>{{client.client_id}}</td>
+<td>{{client.client_name}}</td>
+<td>{{client.created_at}}</td>
+<td>{{client.created_by}}</td>
+<td>
+    <a href="/delete/{{client.id}}" class="btn-btn-danger">delete </a>
+    <a href="/edit/{{client.id}}" ><span class="btn-btn-success">edit</span></a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</center>
+{% endblock %}

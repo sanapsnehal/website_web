@@ -1,0 +1,22 @@
+{% include 'events/base.html'%}
+
+{% block content %}
+<center>
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+            <h1>ADD PROJECT</h1>
+{{form.as_p}}
+<input type="submit" value="submit">
+</form>
+
+</center>
+
+{% endblock %}
